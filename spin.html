@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Yellow_icon.svg/1200px-Yellow_icon.svg.png"/>
+    <style>
+        *
+        {
+            margin:0%;
+            padding:0%;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(75, 73, 73);
+        }
+        .container{
+            height:100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .spinner1{
+            position: relative;
+        }
+        .spinner1 .circle1{
+        height:150px;
+        width:150px;
+        border-radius:50%;
+        animation:spin 2s linear infinite;
+
+        }
+        .spinner1 .circle1 ::before{
+            position:absolute;
+            border-radius:50%;
+            height:100%;
+            width:100%;
+            content:'';
+            box-shadow:0px 0px 5px rgba(255,255,255,0.4);
+          
+        }
+        @keyframes spin{
+            0%{
+                transform:rotate(0deg);
+                box-shadow: 1px 3px 5px green;
+            }
+            50%{
+                transform:rotate(180deg);
+                box-shadow: 1px 3px 5px blue;
+            }
+            100%{
+                transform:rotate(360deg);
+                box-shadow:1px 3px 5px yellow;
+            }
+        }
+
+        span{
+            color:white;
+            font-size:20px;
+            left:50%;
+            top:48%;
+            transform:translateX(-50%);
+            animation:blink 2s linear infinite;
+            position:absolute;
+        }
+        @keyframes blink{
+          50%{
+            color: transparent;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner1">
+         <div class="circle1">
+
+         </div>
+         <div>
+            <span>
+                Loading...
+            </span>
+         </div>
+        </div>
+
+    </div>
+</body>
+</html>
